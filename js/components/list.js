@@ -15,7 +15,7 @@ export default function List(props) {
 				<button type="submit" onClick={e => {
 					e.preventDefault();
 					props.onSubmit();
-				}}/>
+				}}>Submit</button>
 			</form>
 			{renderCards(cards)}
 		</div>
