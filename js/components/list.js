@@ -10,6 +10,13 @@ export default function List(props) {
 	return (
 		<div className='card-list'>
 			<h3>{title}</h3>
+			<form>
+				<input type="text" onChange={e => props.onChange()}></input>
+				<button type="submit" onClick={e => {
+					e.preventDefault();
+					props.onSubmit();
+				}}/>
+			</form>
 			{renderCards(cards)}
 		</div>
 	);
