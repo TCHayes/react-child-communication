@@ -9,15 +9,20 @@ export default class ListContainer extends React.Component {
         cardText: '',
         cards: []
       };
-
     }
 
-    onAddSubmit() {
+    onAddSubmit(e) {
       console.log('Submitted');
+      const currentCard = {
+        text: this.state.cardText,
+        id: this.state.cards.length
+      }
+      this.setState({cards: this.state.cards.concat(currentCard)});
     }
 
-    onAddInputChanged() {
+    onAddInputChanged(e) {
       console.log('Input Changed');
+      this.setState({cardText: e.target.value});
     }
 
 
@@ -25,8 +30,8 @@ export default class ListContainer extends React.Component {
       return (
         <List title={this.props.title}
               cards={this.state.cards}
-              onChange={() => this.onAddInputChanged()}
-              onSubmit={() => this.onAddSubmit()}/>
+              onChange={(e) => this.onAddInputChanged(e)}
+              onSubmit={(e) => this.onAddSubmit(e)}/>
       )
     }
 }
