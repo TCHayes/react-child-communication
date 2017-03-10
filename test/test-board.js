@@ -29,6 +29,9 @@ describe('Board component', function() {
         //checks the top level div to make sure its content matches the title passed in
         result.props.children[0].props.children.should.equal(boardTitle);
         result.props.children[1].length.should.equal(lists.length);
+
+
+        //IF IN DOUBT, PRINT IT OUT TM
         //result.props.title.should.equal(boardTitle);
 
         // const img = result.props.children[0];
