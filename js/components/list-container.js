@@ -17,6 +17,8 @@ export default class ListContainer extends React.Component {
         text: this.state.cardText,
         id: this.state.cards.length
       }
+      const currentState = this.state;
+      currentState.cards.push(currentCard);
       this.setState({cards: this.state.cards.concat(currentCard)});
     }
 
